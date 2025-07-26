@@ -1,18 +1,21 @@
 {
-  "name": "telegram-bots",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "dotenv": "^17.2.0",
-    "fs": "^0.0.1-security",
-    "node-cron": "^4.2.1",
-    "node-telegram-bot-api": "^0.66.0"
-  }
+    "name": "telegram-bots",
+    "version": "1.0.0",
+    "scripts": {
+        "local": "LOCAL_SERVER_PORT=3025 node src/local-server.js",
+        "expose": "lt --port 3025",
+        "test": "jest --testTimeout=15000",
+        "deploy": "vercel --prod"
+    },
+    "dependencies": {
+        "@upstash/redis": "^1.35.1",
+        "express": "^5.1.0",
+        "node-telegram-bot-api": "^0.66.0"
+    },
+    "devDependencies": {
+        "dotenv": "^17.2.0",
+        "jest": "^30.0.5",
+        "localtunnel": "^2.0.2",
+        "node-fetch": "^2.7.0"
+    }
 }

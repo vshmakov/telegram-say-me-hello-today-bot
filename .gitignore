@@ -1,3 +1,6 @@
 node_modules/
+var/
+.idea/
+.vercel/
 .env
-subscribers.json
+.env.test

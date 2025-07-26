@@ -1,0 +1,10 @@
+{
+    "buildCommand": "npm ci --omit=dev",
+    "outputDirectory": "api",
+    "rewrites": [
+        {
+            "source": "/api/say-me-hello-today-bot/:path*",
+            "destination": "/api/say-me-hello-today-bot.js"
+        }
+    ]
+}
