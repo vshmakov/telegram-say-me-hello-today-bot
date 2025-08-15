@@ -10,7 +10,7 @@ module.exports = async () => {
     const messageHandler = new MessageHandler(repository, telegramClient);
 
     return {
-        handleMessage: async (body) => await messageHandler.handleMessage(body.message),
+        handleMessage: async (body) => await messageHandler.handleMessage(body),
         sendDailyQuestion: async () => await periodicalTaskHandler.sendDailyQuestion(),
         sendAlert: async () => await periodicalTaskHandler.sendAlert(),
     };

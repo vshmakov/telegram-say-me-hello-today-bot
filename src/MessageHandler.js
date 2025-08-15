@@ -7,11 +7,12 @@ class MessageHandler {
         this.telegramClient = telegramClient;
     }
 
-    async handleMessage(message) {
-        const text = (message.text || '').trim();
-        const id = message.chat.id;
+    async handleMessage(body) {
+        const message = body.message;
+        const text = (message?.text || '').trim();
+        const id = message?.chat?.id;
 
-        if (!text) return;
+        if (!text || !id) return;
 
         const commands = {
             '/start': this.handleStart.bind(this),
